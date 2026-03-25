@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@theme {
+  --color-film-bg: #131309;
+  --color-film-strip: #0a0a04;
+  --color-film-meta: #c9943a;
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Film grain overlay — base compartilhada */
+.film-grain {
+  inset: 0;
+  z-index: 20;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.055;
+  mix-blend-mode: overlay;
+}
+
+/* No FilmFrame (card) o grain é absolute */
+.film-grain:not(.fixed) {
+  position: absolute;
+}
+
+/* Na página portfolio o grain é fixed (via classe utilitária do Tailwind) */
+.film-grain.fixed {
+  position: fixed;
+}
