@@ -50,4 +50,7 @@ export const usesIntro =
 
 // Coloque sua foto do setup em /public/ e atualize o caminho abaixo.
 // Ex: '/setup.jpg', '/desk.png'. Deixe undefined para ocultar a imagem.
-export const setupImage: { src: string; alt: string } | undefined = undefined
+export const setupImage: { src: string; alt: string } | undefined = {
+  src: '/desk.png',
+  alt: 'My desk setup',
+}

@@ -46,15 +46,14 @@ export default function UsesPage() {
         {/* Setup photo */}
         {setupImage && (
           <figure className="flex flex-col gap-2">
-            <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-white/10">
-              <Image
-                src={setupImage.src}
-                alt={setupImage.alt}
-                fill
-                className="object-cover"
-                sizes="(max-width: 672px) 100vw, 672px"
-              />
-            </div>
+            <Image
+              src={setupImage.src}
+              alt={setupImage.alt}
+              width={1200}
+              height={900}
+              className="w-full h-auto rounded-xl border border-white/10"
+              sizes="(max-width: 672px) 100vw, 672px"
+            />
             <figcaption className="text-white/30 text-xs text-center">{setupImage.alt}</figcaption>
           </figure>
         )}
