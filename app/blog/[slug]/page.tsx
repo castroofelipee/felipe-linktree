@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import { getPostBySlug, getAllPostsMetadata } from '@/lib/posts'
 import { profile } from '@/lib/data/profile'
+import { BlogSignature } from '@/components/blog/BlogSignature'
 import type { Metadata } from 'next'
 
 interface PostPageProps {
@@ -130,6 +131,8 @@ export default async function PostPage({ params }: PostPageProps) {
               {post.content}
             </ReactMarkdown>
           </div>
+
+          <BlogSignature />
         </article>
       </main>
     </div>
