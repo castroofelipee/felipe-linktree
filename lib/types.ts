@@ -1,4 +1,4 @@
-export type LinkIconName = 'store' | 'darkroom' | 'camera' | 'github' | 'monitor'
+export type LinkIconName = 'store' | 'darkroom' | 'camera' | 'github' | 'monitor' | 'book'
 export type SocialIconName = 'tiktok' | 'youtube' | 'x' | 'instagram' | 'linkedin'
 
 export interface LinkItem {

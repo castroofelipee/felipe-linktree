@@ -2,6 +2,12 @@ import type { LinkItem } from '../types'
 
 export const links: LinkItem[] = [
   {
+    id: 'blog',
+    label: 'My tech blog',
+    href: '/blog',
+    icon: 'book',
+  },
+  {
     id: 'portfolio',
     label: 'My career and projects',
     href: '/portfolio',

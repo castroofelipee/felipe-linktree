@@ -41,6 +41,15 @@ function MonitorIcon() {
   )
 }
 
+function BookIcon() {
+  return (
+    <>
+      <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+      <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+    </>
+  )
+}
+
 // GitHub uses fill, not stroke — rendered separately
 function GitHubIcon({ className }: { className?: string }) {
   return (
@@ -56,11 +65,12 @@ function GitHubIcon({ className }: { className?: string }) {
   )
 }
 
-const strokeIconMap: Partial<Record<LinkIconName, () => React.ReactNode>> = {
+const strokeIconMap: Record<Exclude<LinkIconName, 'github'>, () => React.ReactNode> = {
   store: StoreIcon,
   darkroom: DarkroomIcon,
   camera: CameraIcon,
   monitor: MonitorIcon,
+  book: BookIcon,
 }
 
 export function LinkIcon({ name, className = 'w-5 h-5' }: LinkIconProps) {
