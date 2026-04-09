@@ -72,3 +72,91 @@ Every deploy was basically a “cold build”:
 * no reuse of previous layers
 
 On a small VPS, this hurts a lot.
+
+---
+
+### 4. Network dependency during build
+
+I was using `next/font/google`, which fetches fonts during the build.
+
+On a slower or restricted server, this introduces delays or even failures.
+
+---
+
+## What I Changed
+
+Here’s what actually made a difference:
+
+### Added a `.dockerignore`
+
+This reduced the build context dramatically.
+
+```bash
+node_modules
+.next
+.git
+.env
+```
+
+---
+
+### Fixed the Dockerfile
+
+* Switched fully to `npm`
+* Used `npm ci` instead of `npm install`
+* Structured layers to improve caching
+* Used multi-stage build
+
+---
+
+###  Enabled standalone output
+
+In `next.config.js`:
+
+```js
+output: "standalone"
+```
+
+This reduced the final image size and made deployment lighter.
+
+---
+
+## The Result
+
+After these changes:
+
+* Build time dropped from ~12 minutes to ~6 minutes
+* Builds became more stable
+* Fewer network-related issues
+
+---
+
+## What I’d Do Next
+
+Even at 6 minutes, I don’t think building on the server is ideal.
+
+The next step is to:
+
+* build the Docker image in CI (like GitHub Actions)
+* push it to a registry
+* let Coolify just pull and run it
+
+That way, the server doesn’t waste time (or CPU) building.
+
+---
+
+## Final Thought
+
+This wasn’t really a Next.js problem.
+
+It was a combination of:
+
+* Docker configuration
+* lack of caching
+* and environment constraints
+
+Once I looked at the system as a whole, the bottlenecks became obvious.
+
+If your local build is fast but your deploy is slow, don’t blame the framework first — look at your pipeline.
+
+That’s usually where the real problem is.
