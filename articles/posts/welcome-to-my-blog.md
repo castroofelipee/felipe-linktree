@@ -3,6 +3,7 @@ title: "Welcome to My Tech Blog"
 date: "2024-04-07"
 description: "A first post to kick off my personal blog space."
 tags: ["nextjs", "react", "blog"]
+coverImage: "/desk.png"
 ---
 
 # Welcome to My Tech Blog
