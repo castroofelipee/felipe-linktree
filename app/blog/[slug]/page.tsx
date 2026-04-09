@@ -32,6 +32,9 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
   return {
     title: `${post.title} — ${profile.name}`,
     description: post.description,
+    openGraph: {
+      type: 'article',
+    },
   }
 }
 
