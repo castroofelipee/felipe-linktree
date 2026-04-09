@@ -140,7 +140,7 @@ export default async function PostPage({ params }: PostPageProps) {
                 blockquote: ({ ...props }) => (
                   <blockquote className="border-l-4 border-white/20 pl-6 italic my-8 text-white/70" {...props} />
                 ),
-                code: ({ className, children, ...props }: any) => {
+                code: ({ className, children, ...props }: CodeRendererProps) => {
                   const match = /language-(\w+)/.exec(className || '')
                   return match ? (
                     <pre className="bg-white/5 border border-white/10 rounded-lg p-4 overflow-x-auto my-6 font-mono text-sm leading-relaxed text-white/90">
