@@ -18,6 +18,7 @@ describe('Posts Library', () => {
     expect(post).not.toBeNull()
     expect(post?.slug).toBe(firstPost.slug)
     expect(post?.content).toBeDefined()
+    expect(post?.coverImage).toBe(firstPost.coverImage)
   })
 
   it('should return null for non-existent slug', () => {
