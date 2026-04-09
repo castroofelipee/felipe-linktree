@@ -114,7 +114,16 @@ export default async function PostPage({ params }: PostPageProps) {
           </header>
 
           {post.coverImage ? (
-            <div className="relative aspect-[16/9] overflow-hidden rounded-2xl border border-white/10 bg-white/5" />
+            <div className="relative aspect-[16/9] overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+              <Image
+                src={post.coverImage}
+                alt={`Cover image for ${post.title}`}
+                fill
+                priority
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 768px"
+              />
+            </div>
           ) : null}
 
           <div className="prose prose-invert prose-sm sm:prose-base max-w-none">
