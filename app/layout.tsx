@@ -16,6 +16,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: 'Felipe Castro',
   description: 'Engineer, curious, and lifelong learner. I use arch btw',
+  metadataBase: new URL('https://felipecastro.site'),
 }
 
 export default function RootLayout({
