@@ -113,6 +113,10 @@ export default async function PostPage({ params }: PostPageProps) {
             </div>
           </header>
 
+          {post.coverImage ? (
+            <div className="relative aspect-[16/9] overflow-hidden rounded-2xl border border-white/10 bg-white/5" />
+          ) : null}
+
           <div className="prose prose-invert prose-sm sm:prose-base max-w-none">
             <ReactMarkdown 
               remarkPlugins={[remarkGfm]}
