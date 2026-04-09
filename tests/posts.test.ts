@@ -7,6 +7,7 @@ describe('Posts Library', () => {
     expect(posts.length).toBeGreaterThan(0)
     expect(posts[0]).toHaveProperty('slug')
     expect(posts[0]).toHaveProperty('title')
+    expect(posts[0]).toHaveProperty('coverImage')
   })
 
   it('should return the correct post content by slug', () => {
