@@ -10,6 +10,7 @@ export interface PostMetadata {
   description: string
   tags: string[]
   slug: string
+  coverImage?: string
 }
 
 export interface PostContent extends PostMetadata {
