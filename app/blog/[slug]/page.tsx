@@ -37,6 +37,7 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
       title: post.title,
       description: post.description,
       url: `/blog/${post.slug}`,
+      images: post.coverImage ? [{ url: post.coverImage, alt: post.title }] : undefined,
     },
   }
 }
