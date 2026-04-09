@@ -41,6 +41,8 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
     },
     twitter: {
       card: post.coverImage ? 'summary_large_image' : 'summary',
+      title: post.title,
+      description: post.description,
     },
   }
 }
