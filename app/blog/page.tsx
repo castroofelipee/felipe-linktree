@@ -80,7 +80,7 @@ export default function BlogPage() {
               </div>
               <h2 className="text-2xl font-semibold text-white">Coming soon</h2>
               <p className="max-w-md text-film-meta font-mono text-sm leading-relaxed">
-                I'm currently working on some interesting articles. Check back soon for updates on engineering, architecture and product.
+                I&apos;m currently working on some interesting articles. Check back soon for updates on engineering, architecture and product.
               </p>
             </section>
           )}
