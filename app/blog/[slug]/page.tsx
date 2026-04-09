@@ -39,6 +39,9 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
       url: `/blog/${post.slug}`,
       images: post.coverImage ? [{ url: post.coverImage, alt: post.title }] : undefined,
     },
+    twitter: {
+      card: post.coverImage ? 'summary_large_image' : 'summary',
+    },
   }
 }
 
