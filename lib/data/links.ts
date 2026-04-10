@@ -28,7 +28,7 @@ export const links: LinkItem[] = [
   {
     id: 'projects',
     label: 'I like to write :)',
-    href: 'https://felipecastro.site',
+    href: 'https://www.felipecastro.site',
     icon: 'camera',
   },
 ]
