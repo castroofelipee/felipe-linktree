@@ -14,7 +14,7 @@ describe('Posts Library', () => {
     const posts = getAllPostsMetadata()
     const firstPost = posts[0]
     const post = getPostBySlug(firstPost.slug)
-    
+
     expect(post).not.toBeNull()
     expect(post?.slug).toBe(firstPost.slug)
     expect(post?.content).toBeDefined()
