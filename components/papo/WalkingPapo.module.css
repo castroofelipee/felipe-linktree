@@ -26,6 +26,11 @@
   opacity: 0.9;
 }
 
+.flip {
+  transform: scaleX(-1);
+  transform-origin: 50% 50%;
+}
+
 .duck {
   width: clamp(64px, 14vw, 132px);
   height: auto;
