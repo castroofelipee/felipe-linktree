@@ -10,17 +10,27 @@ export function WalkingPapo() {
       </div>
 
       <div className={`${styles.wrap} ${styles.wrapLeft}`} aria-hidden="true">
-        <div className={styles.walk}>
-          <DuckSvg />
+        <div className={styles.pack}>
+          <div className={styles.walk}>
+            <DuckSvg className={styles.duckSmall} />
+          </div>
+          <div className={styles.walk}>
+            <DuckSvg className={styles.duckTiny} />
+          </div>
         </div>
       </div>
     </>
   )
 }
 
-function DuckSvg() {
+function DuckSvg({ className }: { className?: string }) {
   return (
-    <svg className={styles.duck} viewBox="0 0 160 140" role="img" focusable="false">
+    <svg
+      className={[styles.duck, className].filter(Boolean).join(' ')}
+      viewBox="0 0 160 140"
+      role="img"
+      focusable="false"
+    >
       {/* shadow */}
       <ellipse
         className={styles.shadow}

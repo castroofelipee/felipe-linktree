@@ -11,6 +11,21 @@
   right: auto;
 }
 
+.pack {
+  display: grid;
+  gap: 10px;
+}
+
+.duckSmall {
+  width: clamp(52px, 11vw, 110px);
+  opacity: 0.95;
+}
+
+.duckTiny {
+  width: clamp(44px, 9.5vw, 96px);
+  opacity: 0.9;
+}
+
 .duck {
   width: clamp(64px, 14vw, 132px);
   height: auto;
