@@ -10,6 +10,16 @@ export function WalkingPapo() {
           role="img"
           focusable="false"
         >
+          {/* shadow */}
+          <ellipse
+            className={styles.shadow}
+            cx="86"
+            cy="124"
+            rx="44"
+            ry="10"
+            fill="rgba(0,0,0,0.45)"
+          />
+
           {/* body */}
           <path
             d="M52 86c0-22 18-40 40-40h6c19 0 36 14 39 33 1 8-1 16-6 22-9 12-26 20-46 20-25 0-33-14-33-35Z"
@@ -50,6 +60,40 @@ export function WalkingPapo() {
           {/* eye */}
           <circle cx="66" cy="60" r="4.5" fill="#1b1b1b" />
           <circle cx="68" cy="58.5" r="1.5" fill="#ffffff" opacity="0.9" />
+
+          {/* legs */}
+          <g className={styles.legLeft}>
+            <path
+              d="M78 108c0 10-4 14-10 14"
+              fill="none"
+              stroke="#ff8b3d"
+              strokeWidth="6"
+              strokeLinecap="round"
+            />
+            <path
+              d="M62 122c7 2 14 2 20 0"
+              fill="none"
+              stroke="#ff8b3d"
+              strokeWidth="6"
+              strokeLinecap="round"
+            />
+          </g>
+          <g className={styles.legRight}>
+            <path
+              d="M96 108c0 10-4 14-10 14"
+              fill="none"
+              stroke="#ff8b3d"
+              strokeWidth="6"
+              strokeLinecap="round"
+            />
+            <path
+              d="M80 122c7 2 14 2 20 0"
+              fill="none"
+              stroke="#ff8b3d"
+              strokeWidth="6"
+              strokeLinecap="round"
+            />
+          </g>
         </svg>
       </div>
     </div>

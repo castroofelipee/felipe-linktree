@@ -19,9 +19,27 @@
   will-change: transform;
 }
 
+.legLeft {
+  transform-origin: 48% 82%;
+  animation: leg-left 520ms ease-in-out infinite;
+}
+
+.legRight {
+  transform-origin: 58% 82%;
+  animation: leg-right 520ms ease-in-out infinite;
+}
+
+.shadow {
+  transform-origin: 50% 50%;
+  animation: shadow-squash 900ms ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .duck,
-  .walk {
+  .walk,
+  .legLeft,
+  .legRight,
+  .shadow {
     animation: none !important;
   }
 }
@@ -43,5 +61,37 @@
   }
   50% {
     transform: translateX(-18px);
+  }
+}
+
+@keyframes leg-left {
+  0%,
+  100% {
+    transform: rotate(16deg) translateY(0);
+  }
+  50% {
+    transform: rotate(-18deg) translateY(1px);
+  }
+}
+
+@keyframes leg-right {
+  0%,
+  100% {
+    transform: rotate(-18deg) translateY(1px);
+  }
+  50% {
+    transform: rotate(16deg) translateY(0);
+  }
+}
+
+@keyframes shadow-squash {
+  0%,
+  100% {
+    transform: scaleX(1) scaleY(1);
+    opacity: 0.35;
+  }
+  50% {
+    transform: scaleX(1.08) scaleY(0.92);
+    opacity: 0.28;
   }
 }
