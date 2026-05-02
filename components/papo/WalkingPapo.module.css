@@ -44,6 +44,11 @@
   will-change: transform;
 }
 
+.walkFromLeft {
+  animation: duck-walk-from-left 1400ms ease-in-out infinite;
+  will-change: transform;
+}
+
 .walkSlow {
   animation-duration: 1700ms;
   animation-delay: -300ms;
@@ -72,6 +77,7 @@
 @media (prefers-reduced-motion: reduce) {
   .duck,
   .walk,
+  .walkFromLeft,
   .legLeft,
   .legRight,
   .shadow {
@@ -96,6 +102,16 @@
   }
   50% {
     transform: translateX(-18px);
+  }
+}
+
+@keyframes duck-walk-from-left {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(18px);
   }
 }
 
