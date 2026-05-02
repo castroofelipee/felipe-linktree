@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
-import { Analytics } from "@vercel/analytics/next"
 import { Geist, Geist_Mono } from 'next/font/google'
+import Script from 'next/script'
 import './globals.css'
 
 const geistSans = Geist({
@@ -24,10 +24,22 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const umamiSrc = process.env.NEXT_PUBLIC_UMAMI_SRC
+  const umamiWebsiteId = process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID
+
   return (
     <html lang="pt-BR" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body>{children}</body>
-      <Analytics />
+      <body>
+        {children}
+        {umamiSrc && umamiWebsiteId ? (
+          <Script
+            src={umamiSrc}
+            data-website-id={umamiWebsiteId}
+            strategy="afterInteractive"
+            defer
+          />
+        ) : null}
+      </body>
     </html>
   )
 }
