@@ -11,10 +11,10 @@ export function WalkingPapo() {
 
       <div className={`${styles.wrap} ${styles.wrapLeft}`} aria-hidden="true">
         <div className={styles.pack}>
-          <div className={`${styles.walk} ${styles.walkSlow}`}>
+          <div className={`${styles.walkFromLeft} ${styles.walkSlow}`}>
             <DuckSvg className={`${styles.flip} ${styles.duckSmall}`} />
           </div>
-          <div className={`${styles.walk} ${styles.walkFast}`}>
+          <div className={`${styles.walkFromLeft} ${styles.walkFast}`}>
             <DuckSvg className={`${styles.flip} ${styles.duckTiny}`} />
           </div>
         </div>
