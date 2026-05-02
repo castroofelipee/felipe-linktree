@@ -4,6 +4,6 @@ export const profile: ProfileData = {
   name: 'Felipe R. Castro',
   bio: 'Engineer, christian. I use arch btw',
   initials: 'FC',
-  photoSrc: '/profile-image.jpeg',
+  photoSrc: '/ted-or-me.jpg',
   photoAlt: 'Foto de perfil de Felipe Castro',
 }
