@@ -6,6 +6,11 @@
   pointer-events: none;
 }
 
+.wrapLeft {
+  left: max(16px, env(safe-area-inset-left));
+  right: auto;
+}
+
 .duck {
   width: clamp(64px, 14vw, 132px);
   height: auto;
