@@ -39,6 +39,16 @@
   will-change: transform;
 }
 
+.walkSlow {
+  animation-duration: 1700ms;
+  animation-delay: -300ms;
+}
+
+.walkFast {
+  animation-duration: 1200ms;
+  animation-delay: -520ms;
+}
+
 .legLeft {
   transform-origin: 48% 82%;
   animation: leg-left 520ms ease-in-out infinite;
