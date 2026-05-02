@@ -10,6 +10,10 @@
 
 body {
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  background-color: var(--color-film-bg);
+  background-image:
+    radial-gradient(1200px circle at 50% 0%, rgba(201, 148, 58, 0.18), transparent 55%),
+    radial-gradient(900px circle at 50% 100%, rgba(10, 10, 4, 0.55), transparent 60%);
 }
 
 /* Film grain overlay — base compartilhada */
