@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
-import Script from 'next/script'
 import './globals.css'
+import { UmamiAnalytics } from '@/components/analytics/umami'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -32,12 +32,7 @@ export default function RootLayout({
       <body>
         {children}
         {umamiSrc && umamiWebsiteId ? (
-          <Script
-            src={umamiSrc}
-            data-website-id={umamiWebsiteId}
-            strategy="afterInteractive"
-            defer
-          />
+          <UmamiAnalytics src={umamiSrc} websiteId={umamiWebsiteId} />
         ) : null}
       </body>
     </html>
