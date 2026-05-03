@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect } from 'react'
-import { usePathname, useSearchParams } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 import Script from 'next/script'
 
 type UmamiWindow = Window & {
@@ -18,18 +18,13 @@ export function UmamiAnalytics({
   websiteId: string
 }) {
   const pathname = usePathname()
-  const searchParams = useSearchParams()
 
   useEffect(() => {
     const win = window as UmamiWindow
     if (!win.umami?.track) return
 
-    const url = searchParams?.size
-      ? `${pathname}?${searchParams.toString()}`
-      : pathname
-
-    win.umami.track(url)
-  }, [pathname, searchParams])
+    win.umami.track(`${window.location.pathname}${window.location.search}`)
+  }, [pathname])
 
   return (
     <Script
