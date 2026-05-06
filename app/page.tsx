@@ -14,7 +14,7 @@ export default function HomePage() {
   return (
     <FilmFrame>
       <>
-        <div className="flex flex-col items-center gap-8 px-6 py-12">
+        <div className="relative flex flex-col items-center gap-8 px-6 pb-12 pt-20">
           <SourceCodeReference link={sourceCodeLink} />
 
           <div className="flex flex-col items-center gap-5">

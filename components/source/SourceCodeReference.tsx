@@ -8,17 +8,17 @@ interface SourceCodeReferenceProps {
 
 export function SourceCodeReference({ link }: SourceCodeReferenceProps) {
   return (
-    <div className="w-full flex justify-center">
+    <div className="absolute right-5 top-5 z-30 sm:right-6 sm:top-6">
       <Link
         href={link.href}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center gap-3 rounded-full border border-white/12 bg-white/6 px-4 py-2 text-sm text-white/80 transition-colors hover:bg-white/10 hover:text-white"
+        aria-label={link.label}
+        title={link.label}
+        className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/12 bg-white/6 text-white/75 transition-colors hover:bg-white/10 hover:text-white"
       >
-        <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10">
-          <LinkIcon name={link.icon} className="h-4 w-4" />
-        </span>
-        <span>{link.label}</span>
+        <LinkIcon name={link.icon} className="h-5 w-5" />
+        <span className="sr-only">{link.label}</span>
       </Link>
     </div>
   )
