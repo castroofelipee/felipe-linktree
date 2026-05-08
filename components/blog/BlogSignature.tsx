@@ -29,9 +29,6 @@ export function BlogSignature() {
         You can sponsor me on{' '}
         <Link href="https://github.com/sponsors/castroofelipee" className="text-white/60 hover:text-white underline underline-offset-4 decoration-white/20 transition-all">github</Link>.
       </p>
-      <p>
-        Color scheme: auto, light, dark.
-      </p>
     </footer>
   )
 }
