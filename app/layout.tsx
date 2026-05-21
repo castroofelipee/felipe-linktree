@@ -17,6 +17,13 @@ export const metadata: Metadata = {
   title: 'Felipe Castro',
   description: 'Engineer, curious, and lifelong learner. I use arch btw',
   metadataBase: new URL('https://wwwfelipecastro.site'),
+  alternates: {
+    types: {
+      'application/rss+xml': [
+        { url: '/feed.xml', title: 'Felipe Castro — Tech Blog' },
+      ],
+    },
+  },
 }
 
 export default function RootLayout({
