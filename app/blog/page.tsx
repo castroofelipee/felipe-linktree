@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { PortfolioHeader } from '@/components/portfolio/PortfolioHeader'
 import { profile } from '@/lib/data/profile'
 import { getAllPostsMetadata } from '@/lib/posts'
+import { slugifyTag } from '@/lib/tags'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -26,14 +27,18 @@ export default function BlogPage() {
         <div className="flex flex-col gap-8">
           {posts.length > 0 ? (
             posts.map((post) => (
-              <Link 
-                key={post.slug} 
-                href={`/blog/${post.slug}`}
-                className="group flex flex-col gap-2 p-4 -mx-4 rounded-xl hover:bg-white/5 transition-all"
+              <article
+                key={post.slug}
+                className="group relative flex flex-col gap-2 p-4 -mx-4 rounded-xl hover:bg-white/5 transition-all"
               >
                 <div className="flex items-center justify-between gap-4">
-                  <h2 className="text-white text-lg font-medium group-hover:text-white transition-colors">
-                    {post.title}
+                  <h2 className="text-white text-lg font-medium">
+                    <Link
+                      href={`/blog/${post.slug}`}
+                      className="after:absolute after:inset-0 after:content-[''] after:rounded-xl"
+                    >
+                      {post.title}
+                    </Link>
                   </h2>
                   <time className="text-film-meta font-mono text-xs shrink-0">
                     {new Date(post.date).toLocaleDateString('en-US', {
@@ -47,18 +52,19 @@ export default function BlogPage() {
                   {post.description}
                 </p>
                 {post.tags && (
-                  <div className="flex gap-2 mt-1">
+                  <div className="relative z-10 flex flex-wrap gap-2 mt-1">
                     {post.tags.map((tag) => (
-                      <span 
-                        key={tag} 
-                        className="text-[10px] font-mono text-white/40 border border-white/10 px-2 py-0.5 rounded-full"
+                      <Link
+                        key={tag}
+                        href={`/blog/tags/${slugifyTag(tag)}`}
+                        className="text-[10px] font-mono text-white/40 hover:text-white border border-white/10 hover:border-white/30 px-2 py-0.5 rounded-full transition-colors"
                       >
                         #{tag}
-                      </span>
+                      </Link>
                     ))}
                   </div>
                 )}
-              </Link>
+              </article>
             ))
           ) : (
             <section className="flex flex-col gap-6 items-center justify-center py-20 text-center">
