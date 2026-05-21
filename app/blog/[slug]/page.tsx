@@ -5,6 +5,7 @@ import type { ComponentPropsWithoutRef } from 'react'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import { getPostBySlug, getAllPostsMetadata } from '@/lib/posts'
+import { slugifyTag } from '@/lib/tags'
 import { profile } from '@/lib/data/profile'
 import { BlogSignature } from '@/components/blog/BlogSignature'
 import type { Metadata } from 'next'
@@ -101,14 +102,15 @@ export default async function PostPage({ params }: PostPageProps) {
             <h1 className="text-white text-4xl font-bold tracking-tight leading-tight">
               {post.title}
             </h1>
-            <div className="flex gap-2">
+            <div className="flex flex-wrap gap-2">
               {post.tags.map((tag) => (
-                <span 
-                  key={tag} 
-                  className="text-xs font-mono text-white/40 border border-white/10 px-2 py-0.5 rounded-full"
+                <Link
+                  key={tag}
+                  href={`/blog/tags/${slugifyTag(tag)}`}
+                  className="text-xs font-mono text-white/40 hover:text-white border border-white/10 hover:border-white/30 px-2 py-0.5 rounded-full transition-colors"
                 >
                   #{tag}
-                </span>
+                </Link>
               ))}
             </div>
           </header>
