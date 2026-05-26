@@ -2,7 +2,7 @@
 title: "I spent two years devoting myself to creating products that nobody uses"
 date: "2026-05-26"
 description: "I spent two years devoting myself to creating products that nobody uses"
-tags: ["producs" "product"]
+tags: ["products", "product"]
 coverImage: ""
 ---
 
