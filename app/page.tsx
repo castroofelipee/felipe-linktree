@@ -1,8 +1,7 @@
 import { FilmFrame } from '@/components/film/FilmFrame'
 import { ProfilePhoto } from '@/components/profile/ProfilePhoto'
 import { ProfileInfo } from '@/components/profile/ProfileInfo'
-import { LinkList } from '@/components/links/LinkList'
-import { SocialLinks } from '@/components/social/SocialLinks'
+import { LinkGrid } from '@/components/links/LinkGrid'
 import { SourceCodeReference } from '@/components/source/SourceCodeReference'
 import { profile } from '@/lib/data/profile'
 import { links } from '@/lib/data/links'
@@ -25,9 +24,7 @@ export default function HomePage() {
           <ProfileInfo name={profile.name} bio={profile.bio} />
         </div>
 
-        <LinkList links={links} />
-
-        <SocialLinks socials={socials} />
+        <LinkGrid links={links} socials={socials} />
       </div>
     </FilmFrame>
   )

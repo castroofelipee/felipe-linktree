@@ -7,4 +7,10 @@ export const socials: SocialItem[] = [
     href: 'https://www.linkedin.com/in/felipecastrodev/',
     icon: 'linkedin',
   },
+  {
+    id: 'instagram',
+    platform: 'Instagram',
+    href: 'https://www.instagram.com/castrofelipee19/',
+    icon: 'instagram',
+  },
 ]
